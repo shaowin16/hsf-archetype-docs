@@ -1,10 +1,11 @@
 * [Introduction](README.md)
-* 1 安装手册
+* 1 快速开始
 
   * [1.1 开发环境安装](env-install.md)
   * [1.2 edas轻量级配置中心安装](edas-config-install.md)
   * [1.3 MySQL数据库安装](mysql-install.md)
   * [1.4 脚手架工程生成](archetype-install.md)
+  * [1.5 简单开发示例](demo.md)
 
 * 2 使用手册
 
@@ -17,4 +18,5 @@
   * [2.7 统一异常处理](exception.md)
   * [2.8 Docker使用](docker.md)
 
+* [Changelog](changelog.md)
 

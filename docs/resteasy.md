@@ -47,9 +47,11 @@ public class Library {
 
 说明：
 
-- 类或方法是存在 @Path 注解或者 HTTP 方法的注解
-- 如果方法上没有 HTTP 方法的注解，则称为 JAXRSResourceLocators
-- @Path 注解支持正则表达式映射
+- 类或方法是存在 @Path 注解或者 HTTP 方法的注解。
+
+- 如果方法上没有 HTTP 方法的注解，则称为 JAXRSResourceLocators。
+
+- @Path 注解支持正则表达式映射。
 
 RESTEasy更多特性和使用方法请参考 [官方文档](http://docs.jboss.org/resteasy/docs/3.5.1.Final/userguide/html_single/index.html)。
 

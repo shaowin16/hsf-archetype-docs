@@ -19,8 +19,11 @@ provider模块下config包，JaxrsApplication类对Swagger进行了相关配置�
 #### 常用注解说明：
 
 - **@Api**：用在类上，说明该类的作用
+
 - **@ApiOperation**：用在方法上，说明方法的作用，标注在具体请求上，value和notes的作用差不多，都是对请求进行说明；tags则是对请求进行分类的，比如你有好几个controller，分别属于不同的功能模块，那这里我们就可以使用tags来区分了
+
 - **@ApiImplicitParams**：用在方法上包含一组参数说明
+
 - **@ApiImplicitParam**：用在@ApiImplicitParams注解中，指定一个请求参数的各个方面
 
 　　*paramType*：参数放在哪个地方       

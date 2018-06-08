@@ -14,7 +14,9 @@ provider模块下resource/rpc目录为hsf配置文件目录。
 这里采用的是properties文件的方式进行参数配置。
 
 - application.properties文件包含了通用的配置，如spring aop配置，服务端口号，hsf配置以及多环境支持配置等。
+
 - application-dev.properties和application-prod.properties文件主要区分开发和生产环境配置，如数据库配置。
+
 - 如有需要可以继续添加多个环境的配置文件，在application.properties通过指定环境名生效对应的配置文件。
 
 ## logback配置
