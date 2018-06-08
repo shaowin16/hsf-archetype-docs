@@ -5,5 +5,6 @@
 - jdk >= 1.7
 - node.js >= 8.11.2
 - maven >= 3.3.9
+- MySQL >= 5.7
 - docker >= 17.12.1-ce (非必需)
 

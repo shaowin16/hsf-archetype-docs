@@ -8,13 +8,13 @@
 
 * 2 使用手册
 
-  * [2.1 目录结构说明](structure.md)
-  * [2.2 配置文件参数说明](config.md)
-  * [2.3 RESTEasy的使用](resteasy.md)
-  * [2.4 Swagger2的使用](swagger.md)
-  * [2.5 Mybatis-Plus的使用](mybatis-plus.md)
+  * [2.1 目录结构](structure.md)
+  * [2.2 配置文件](config.md)
+  * [2.3 RESTEasy](resteasy.md)
+  * [2.4 Swagger](swagger.md)
+  * [2.5 Mybatis-Plus](mybatis-plus.md)
   * [2.6 统一日志处理](log.md)
   * [2.7 统一异常处理](exception.md)
-  * [2.8 Docker的使用](docker.md)
+  * [2.8 Docker使用](docker.md)
 
 
