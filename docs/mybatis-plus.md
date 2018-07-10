@@ -55,7 +55,8 @@ public class DataSourceConfig {
 > MP在mybatis的基础上封装了通用crud方法。
 
 - **实体注解**
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284228066878.jpg)
+
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312348830709.jpg)
 
 *表名注解：* @TableName      
 *主键注解：* @TableId        
@@ -71,7 +72,8 @@ public interface UserMapper extends BaseMapper<User> { }
 ```
 
 - **自定义查询**
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284235435379.jpg)
+
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312349240651.jpg)
 
 Mybatis 原生已支持通过注解方式进行自定义查询。
 

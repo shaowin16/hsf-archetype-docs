@@ -3,7 +3,7 @@
 ## hsf配置
 provider模块下resource/rpc目录为hsf配置文件目录。
 
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-06-15282750414793.jpg)
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312346222481.jpg)
 
 其中，用 *hsf:provider* 标签表明提供一个服务生产者，用 *hsf:consumer* 标签表明消费一个服务实例。
 

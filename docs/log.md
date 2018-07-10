@@ -12,13 +12,14 @@ LogBack读取配置文件的步骤:
 
 我们在resources目录下创建了logback.xml文件，并且添加日志配置输出到文件内按天存储到不同的文件之中。具体配置如下图所示：
 
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284251688818.jpg)
+![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312350512533.jpg)
+
 
 在logback.xml配置文件中，添加了控制台输出、文件每天输出、日志文件最大上限、日志的最低级别等。
 
 resources目录下的application.properties文件定义了日志环境和级别等其他配置信息，如下图所示：
 
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284253634868.jpg)
+![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312351418640.jpg)
 
 !> Logback更多配置用法请参考[官方文档](https://logback.qos.ch/manual/configuration.html)
 
@@ -30,7 +31,7 @@ AOP是面向切面编程，利用AOP可以对业务逻辑的各个部分进行�
 
 这里定义切面记录了HTTP请求详细内容和返回内容，同时记录了处理时间，对异常进行处理，如下图所示：
 
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284258822620.jpg)
+![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312350803428.jpg)
 
 *@Pointcut*：声明切入点表达式        
 *@Around*：同时在所拦截方法的前后执行一段逻辑

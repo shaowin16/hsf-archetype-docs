@@ -15,7 +15,7 @@
 FROM fabric8/java-jboss-openjdk8-jdk
 
 # Prepare by downloading dependencies
-COPY stonehenge-provider/target/demo.jar stonehenge-provider/target/taobao-hsf.sar-dev-SNAPSHOT.jar /home/
+COPY optimus-provider/target/demo.jar optimus-provider/target/taobao-hsf.sar-dev-SNAPSHOT.jar /home/
 ```
 
 *FROM*：DockerFile第一条必须为From指令。如果同一个DockerFile创建多个镜像时，可使用多个From指令（每个镜像一次）。       
@@ -32,7 +32,7 @@ cd `dirname $0`
 img_mvn="maven:3.3.3-jdk-8"                 # docker image of maven
 m2_cache=~/.m2                              # the local maven cache dir
 proj_home=$PWD                              # the project root dir
-img_output="dtyunxi/stonehenge"         # output image tag
+img_output="deepexi/optimus"         # output image tag
 
 git pull  # should use git clone https://name:pwd@xxx.git
 
@@ -47,15 +47,15 @@ else
         -w /usr/src/mymaven $img_mvn mvn clean package
 fi
 
-sudo mv $proj_home/stonehenge-provider/target/stonehenge-provider-*.jar $proj_home/stonehenge-provider/target/demo.jar # 兼容所有sh脚本
-sudo cp $m2_cache/repository/com/taobao/pandora/taobao-hsf.sar/dev-SNAPSHOT/taobao-hsf.sar-dev-SNAPSHOT.jar $proj_home/stonehenge-provider/target/taobao-hsf.sar-dev-SNAPSHOT.jar
+sudo mv $proj_home/optimus-provider/target/optimus-provider-*.jar $proj_home/optimus-provider/target/demo.jar # 兼容所有sh脚本
+sudo cp $m2_cache/repository/com/taobao/pandora/taobao-hsf.sar/dev-SNAPSHOT/taobao-hsf.sar-dev-SNAPSHOT.jar $proj_home/optimus-provider/target/taobao-hsf.sar-dev-SNAPSHOT.jar
 docker build -t $img_output .
 
 mkdir -p $PWD/logs
 chmod 777 $PWD/logs
 
 # 删除容器
-docker rm -f stonehenge &> /dev/null
+docker rm -f optimus &> /dev/null
 
 version=`date "+%Y%m%d%H"`
 # 启动镜像
@@ -64,7 +64,7 @@ docker run -d --restart=on-failure:5 --privileged=true \
     -p 8088:8088 \
     -w /home \
     -v $PWD/logs:/home/logs \
-    --name stonehenge dtyunxi/stonehenge \
+    --name optimus deepexi/optimus \
     java \
         -Djava.security.egd=file:/dev/./urandom \
         -Duser.timezone=Asia/Shanghai \

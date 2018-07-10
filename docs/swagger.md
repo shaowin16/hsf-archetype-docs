@@ -6,7 +6,7 @@
 
 provider模块下config包，JaxrsApplication类对Swagger进行了相关配置，如下图：
 
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-06-15282788306433.jpg)
+![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312347348086.jpg)
 
 其中，BeanConfig类包含了创建该Api的基本信息（这些基本信息会展现在文档页面中）。
 
@@ -14,7 +14,7 @@ provider模块下config包，JaxrsApplication类对Swagger进行了相关配置�
 
 通过在rest接口的实现类上添加注解的方式配置，如下图所示：
 
-![](http://p9vs76p49.bkt.clouddn.com/2018-06-06-15282793021461.jpg)
+![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312347970870.jpg)
 
 #### 常用注解说明：
 

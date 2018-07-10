@@ -1,20 +1,20 @@
 # 目录结构
 
-使用stonehenge-cli工具生成默认的hsf模板工程，目录结构如下所示：
+使用optimus-cli工具生成默认的hsf模板工程，目录结构如下所示：
 
 ```
 .
 ├── Dockerfile
 ├── pom.xml
 ├── start-code.sh
-├── stonehenge-api
+├── optimus-api
 │   ├── pom.xml
 │   └── src
 │       ├── main
 │       │   ├── java
 │       │   │   └── com
 │       │   │       └── dtyunxi
-│       │   │           └── stonehenge
+│       │   │           └── optimus
 │       │   │               ├── api
 │       │   │               │   ├── ApplicationService.java
 │       │   │               │   └── query
@@ -30,16 +30,16 @@
 │           ├── java
 │           │   └── com
 │           │       └── dtyunxi
-│           │           └── stonehenge
+│           │           └── optimus
 │           └── resources
-└── stonehenge-provider
+└── optimus-provider
     ├── pom.xml
     └── src
         ├── main
         │   ├── java
         │   │   └── com
         │   │       └── dtyunxi
-        │   │           └── stonehenge
+        │   │           └── optimus
         │   │               ├── StartupApplication.java
         │   │               ├── aop
         │   │               │   └── LogAspect.java
@@ -68,7 +68,7 @@
             ├── java
             │   └── com
             │       └── dtyunxi
-            │           └── stonehenge
+            │           └── optimus
             └── resources
 ```
 
