@@ -4,25 +4,26 @@
 
 1. 通过前面的步骤生成模板工程后，选择使用idea导入：      
 
- ![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284309363384.jpg)
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15311897970065.jpg)
 
-2. 新建user实体类，添加mytias-plus注解，在配置的数据库里添加对应user表：
+2. 新建user实体类，添加mybatis-plus注解，在配置的数据库里添加对应user表：
 
- ![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284365349372.jpg)
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15311932569601.jpg)
 
 3. 编写mapper类
 mapper类只需要写自定义查询即可，单表crud无需自己编写，这里通过使用分页插件只写了分页查询方法：
 
- ![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284403454457.jpg)
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15311941506112.jpg)
 
 4. 编写接口类和实现类
 工程支持REST接口和RPC接口，若无需提供RPC接口，只需编写REST接口和实现类即可，如下图所示，提供了REST和RPC接口及其实现类：
 
- ![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284402327125.jpg)
+![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284402327125.jpg)
 
  RPC接口类在api模块中编写：
  
- ![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284405986113.jpg)
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312330331989.jpg)
+
 
  为了防止代码重复，REST接口实现类通过内部调用RPC接口的方式，再在RPC接口实现类内部调用mapper实现数据查询和持久化。
 
@@ -32,7 +33,8 @@ mapper类只需要写自定义查询即可，单表crud无需自己编写，这�
 
  右键*StartupApplication*类运行，即可启动应用程序。
 
- ![](http://p9vs76p49.bkt.clouddn.com/2018-06-08-15284410365942.jpg)
+ ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312333702425.jpg)
+
 
  !> 若启动报HSF-0016错误，请在idea的JVM启动参数添加-Dhsf.server.ip=你本地网卡的ip，一般本地ip可以填写127.0.0.1即可。
  
