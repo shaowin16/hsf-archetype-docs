@@ -38,13 +38,13 @@ git pull  # should use git clone https://name:pwd@xxx.git
 
 if which mvn ; then
     echo "use local maven"
-    mvn clean package
+    mvn clean package -U
 else
     echo "use docker maven"
     docker run --rm \
         -v $m2_cache:/root/.m2 \
         -v $proj_home:/usr/src/mymaven \
-        -w /usr/src/mymaven $img_mvn mvn clean package
+        -w /usr/src/mymaven $img_mvn mvn clean package -U
 fi
 
 sudo mv $proj_home/optimus-provider/target/optimus-provider-*.jar $proj_home/optimus-provider/target/demo.jar # 兼容所有sh脚本
@@ -58,10 +58,15 @@ chmod 777 $PWD/logs
 docker rm -f optimus &> /dev/null
 
 version=`date "+%Y%m%d%H"`
+
+spring_datasource_url=jdbc:mysql://localhost:3306/optimus?useUnicode=true\&characterEncoding=utf-8\&useSSL=false
+
+server_ip=192.168.31.100
+
 # 启动镜像
 docker run -d --restart=on-failure:5 --privileged=true \
-    --add-host=jmenv.tbsite.net:119.29.54.199 \
-    -p 8088:8088 \
+    --add-host=jmenv.tbsite.net:$server_ip \
+    --net=host \
     -w /home \
     -v $PWD/logs:/home/logs \
     --name optimus deepexi/optimus \
@@ -69,12 +74,18 @@ docker run -d --restart=on-failure:5 --privileged=true \
         -Djava.security.egd=file:/dev/./urandom \
         -Duser.timezone=Asia/Shanghai \
         -Dpandora.location=/home/taobao-hsf.sar-dev-SNAPSHOT.jar \
+        -Dhsf.server.port=12088 \
+        -Dpandora.qos.port=12089 \
         -XX:+PrintGCDateStamps \
         -XX:+PrintGCTimeStamps \
         -XX:+PrintGCDetails \
         -XX:+HeapDumpOnOutOfMemoryError \
         -Xloggc:logs/gc_$version.log \
-        -jar /home/demo.jar
+        -jar /home/demo.jar \
+          --spring.profiles.active=prod \
+          --spring.datasource.url=$spring_datasource_url \
+          --spring.datasource.username=root \
+          --spring.datasource.password=my-secret-ab
 ```
 
 用户只需配置edas轻量级配置中心地址启动脚本即可运行起来工程的docker容器。

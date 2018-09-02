@@ -1,11 +1,17 @@
 # 配置
 
 ## hsf配置
-provider模块下resource/rpc目录为hsf配置文件目录。
+通过注解暴露和引入RPC接口。provider模块下config目录的HsfConfig类为消费方引入接口的配置类，若要暴露RPC接口注册到注册中心，只需要在接口的实现类上加上 *@HSFProvider* 注解即可。
 
- ![](http://p9vs76p49.bkt.clouddn.com/2018-07-10-15312346222481.jpg)
+生产者：
 
-其中，用 *hsf:provider* 标签表明提供一个服务生产者，用 *hsf:consumer* 标签表明消费一个服务实例。
+![](http://p9vs76p49.bkt.clouddn.com/2018-09-02-15358769008774.jpg)
+
+消费者：
+
+![](http://p9vs76p49.bkt.clouddn.com/2018-09-02-15358773227676.jpg)
+
+![](http://p9vs76p49.bkt.clouddn.com/2018-09-02-15358772367052.jpg)
 
 可以参考官方文档关于hsf的 [特性](https://help.aliyun.com/document_detail/44890.html?spm=a2c4g.11186623.6.657.wcO3Ad#h2--2) 和 [使用](https://help.aliyun.com/document_detail/44170.html?spm=a2c4g.11186623.6.654.H8ThTR#h2-u914Du7F6Eu670Du52A1u5C5Eu60272)。
 

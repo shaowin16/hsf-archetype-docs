@@ -5,76 +5,80 @@
 ```
 .
 ├── Dockerfile
-├── pom.xml
-├── start-code.sh
+├── README.md
+├── hsf.lock
 ├── optimus-api
 │   ├── pom.xml
 │   └── src
 │       ├── main
 │       │   ├── java
 │       │   │   └── com
-│       │   │       └── dtyunxi
+│       │   │       └── deepexi
 │       │   │           └── optimus
 │       │   │               ├── api
-│       │   │               │   ├── ApplicationService.java
-│       │   │               │   └── query
-│       │   │               │       └── ApplicationQueryService.java
+│       │   │               │   └── ProductService.java
 │       │   │               └── domain
-│       │   │                   ├── dto
-│       │   │                   │   ├── ApplicationDto.java
-│       │   │                   │   └── Payload.java
 │       │   │                   └── eo
-│       │   │                       └── ApplicationEo.java
+│       │   │                       └── Product.java
 │       │   └── resources
 │       └── test
 │           ├── java
 │           │   └── com
-│           │       └── dtyunxi
+│           │       └── deepexi
 │           │           └── optimus
 │           └── resources
-└── optimus-provider
-    ├── pom.xml
-    └── src
-        ├── main
-        │   ├── java
-        │   │   └── com
-        │   │       └── dtyunxi
-        │   │           └── optimus
-        │   │               ├── StartupApplication.java
-        │   │               ├── aop
-        │   │               │   └── LogAspect.java
-        │   │               ├── config
-        │   │               │   ├── DataSourceConfig.java
-        │   │               │   └── JaxrsApplication.java
-        │   │               ├── mapper
-        │   │               │   └── ApplicationMapper.java
-        │   │               └── service
-        │   │                   ├── rest
-        │   │                   │   ├── ApplicationRestServiceImpl.java
-        │   │                   │   └── api
-        │   │                   │       └── ApplicationRestService.java
-        │   │                   └── rpc
-        │   │                       ├── ApplicationServiceImpl.java
-        │   │                       └── query
-        │   │                           └── ApplicationQueryServiceImpl.java
-        │   └── resources
-        │       ├── application-dev.properties
-        │       ├── application-prod.properties
-        │       ├── application.properties
-        │       ├── logback-spring.xml
-        │       └── rpc
-        │           └── hsf-provider.xml
-        └── test
-            ├── java
-            │   └── com
-            │       └── dtyunxi
-            │           └── optimus
-            └── resources
+├── optimus-provider
+│   ├── generated
+│   │   └── document.html
+│   ├── pom.xml
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── com
+│       │   │       └── deepexi
+│       │   │           └── optimus
+│       │   │               ├── StartupApplication.java
+│       │   │               ├── aop
+│       │   │               │   └── LogAspect.java
+│       │   │               ├── config
+│       │   │               │   ├── DataSourceConfig.java
+│       │   │               │   ├── HsfConfig.java
+│       │   │               │   ├── JPAQueryFactoryUtil.java
+│       │   │               │   └── JaxrsApplication.java
+│       │   │               ├── extension
+│       │   │               │   ├── ApplicationException.java
+│       │   │               │   └── ExceptionHandler.java
+│       │   │               ├── mapper
+│       │   │               │   └── ProductMapper.java
+│       │   │               ├── repository
+│       │   │               │   └── ProductRepository.java
+│       │   │               └── service
+│       │   │                   ├── rest
+│       │   │                   │   ├── ProductRestServiceImpl.java
+│       │   │                   │   └── api
+│       │   │                   │       └── ProductRestService.java
+│       │   │                   └── rpc
+│       │   │                       └── ProductServiceImpl.java
+│       │   └── resources
+│       │       ├── application-dev.properties
+│       │       ├── application-prod.properties
+│       │       ├── application.properties
+│       │       ├── logback-spring.xml
+│       │       └── mapper
+│       │           └── ProductMapper.xml
+│       └── test
+│           ├── java
+│           │   └── com
+│           │       └── deepexi
+│           │           └── optimus
+│           └── resources
+├── pom.xml
+└── start-code.sh
 ```
 
 - 工程划分为 *api* 和 *provider* 两个模块。api模块包含rpc调用接口以及数据库映射实体；provider模块包含具体rpc接口实现类，以及对外直接暴露restful风格的接口和实现。     
 
-- api模块下的*.api.query包包含了rpc调用的所有查询方法类，其他增删改对应类在api包下。单独划分出query查询包方便后期在应用层实现读写分离。
+- api模块下的*.api包包含了rpc调用的所有接口类。
 
 - api模块下的domain包分为dto包，包含了自定义封装的返回实体类，eo包内容为对应的数据库映射实体类。
 

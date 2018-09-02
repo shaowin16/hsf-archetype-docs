@@ -13,7 +13,7 @@
   * [2.2 配置文件](config.md)
   * [2.3 RESTEasy](resteasy.md)
   * [2.4 Swagger](swagger.md)
-  * [2.5 Mybatis-Plus](mybatis-plus.md)
+  * [2.5 Mybatis](mybatis.md)
   * [2.6 统一日志处理](log.md)
   * [2.7 统一异常处理](exception.md)
   * [2.8 Docker使用](docker.md)
